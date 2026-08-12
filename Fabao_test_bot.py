@@ -10,7 +10,7 @@ def get_user(user_id):
         return user_data[user_id]
 # cd ~/Desktop/python/my_bot
 # python Fabao_test_bot.py
-bot = telebot.TeleBot ('8651018079:AAEG8wjIKtOrq9Kf-0UIyau_Un-eQToVtxc')
+bot = telebot.TeleBot ('токен')
 
 @bot.message_handler(commands=['start'])
 def start(message):
