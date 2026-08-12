@@ -8,8 +8,7 @@ def get_user(user_id):
                 "101B": 0,
                 "101F": 0 }}
         return user_data[user_id]
-# cd ~/Desktop/python/my_bot
-# python Fabao_test_bot.py
+
 bot = telebot.TeleBot ('токен')
 
 @bot.message_handler(commands=['start'])
