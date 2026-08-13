@@ -1,23 +1,10 @@
 
 import telebot
 from telebot import types
-import os 
-from flask import Flask
-from threading import Thread
+import os
 from dotenv import load_dotenv
-app = Flask('')
-@app.route('/')
-def home():
-    return "Бот работает!"
 
-def run():
-    app.run(host='0.0.0.0', port=8080)
-
-def keep_alive():
-    t = Thread(target=run)
-    t.start()
-
-keep_alive()
+load_dotenv()
 user_data = {}
 def get_user(user_id):
     if user_id not in user_data:
@@ -335,4 +322,5 @@ def show_result (chat_id, user_id):
             f"Вам подходит: <b>{info['name']}</b>\n\n"f"{info['desc']}\n\n"
             f"<em> Результат носит информационный характер и помогает сориентирваться в ассортименте. При выраженном или длительном выпадении волос рекомендуем обратиться к специалисту.</em>\n\n"
     f"Подробнее на сайте: ", parse_mode='HTML')
+if __name__ == "__main__":
 bot.infinity_polling()
