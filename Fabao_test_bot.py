@@ -318,9 +318,14 @@ def show_result (chat_id, user_id):
         with open(f"photo_results/{info['image']}", 'rb') as photo:
             bot.send_photo (chat_id, photo, caption=f"✅ Тест завершён!\n\nВам подходит: <b>{info['name']}</b>\n\n{info['desc']}\n\nПодробнее на сайте: fabao.ru", reply_markup=markup, parse_mode='HTML')
     except FileNotFoundError:
-        bot.send_message(chat_id,f"✅ Тест завершён!\n\n" 
-            f"Вам подходит: <b>{info['name']}</b>\n\n"f"{info['desc']}\n\n"
-            f"<em> Результат носит информационный характер и помогает сориентирваться в ассортименте. При выраженном или длительном выпадении волос рекомендуем обратиться к специалисту.</em>\n\n"
-    f"Подробнее на сайте: ", parse_mode='HTML')
+        bot.send_message(
+            chat_id,
+            f"✅ Тест завершён!\n\n"
+            f"Вам подходит: <b>{info['name']}</b>\n\n"
+            f"{info['desc']}\n\n"
+            f"<em>Результат носит информационный характер и помогает сориентироваться в ассортименте. При выраженном или длительном выпадении волос рекомендуем обратиться к специалисту.</em>\n\n"
+            f"Подробнее на сайте: ",
+            parse_mode='HTML'
+        )
 if __name__ == "__main__":
     bot.infinity_polling()
