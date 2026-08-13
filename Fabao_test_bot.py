@@ -26,10 +26,9 @@ def get_user(user_id):
                 "101B": 0,
                 "101F": 0 }}
         return user_data[user_id]
-# cd ~/Desktop/python/my_bot
-# python Fabao_test_bot.py
+
 load_dotenv()
-bot = telebot.TeleBot ('8651018079:AAEG8wjIKtOrq9Kf-0UIyau_Un-eQToVtxc')
+bot = telebot.TeleBot ('')
 
 @bot.message_handler(commands=['start'])
 def start(message):
