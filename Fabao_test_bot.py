@@ -28,7 +28,7 @@ def get_user(user_id):
         return user_data[user_id]
 
 load_dotenv()
-bot = telebot.TeleBot ('')
+bot = telebot.TeleBot (os.getenv('BOT_TOKEN'))
 
 @bot.message_handler(commands=['start'])
 def start(message):
